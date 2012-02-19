@@ -5,4 +5,9 @@ class CharacterTest < ActiveSupport::TestCase
     character = Character.new
     assert !character.save, "Saved a character without a name." 
   end
+  test "assigning a string to the int field should error out" do
+    character = Character.new(:name => 'Tim',:int => 'string')
+    assert character.valid?, 
+      "Permitted a string assigned to the int field"
+  end
 end
