@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: Kibblehorn
+  int: 15
+  str: 18
+  wis: 16
+  con: 14
+  chr: 13
+  dex: 10
+
+two:
+  name: Low
+  int: 1
+  str: 1
+  wis: 1
+  con: 1
+  chr: 1
+  dex: 1
+
+two:
+  name: High
+  int: 18
+  str: 18
+  wis: 18
+  con: 18
+  chr: 18
+  dex: 18
+
