@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120220003939) do
+ActiveRecord::Schema.define(:version => 20120220115044) do
 
   create_table "characters", :force => true do |t|
     t.string   "name"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(:version => 20120220003939) do
   end
 
   create_table "modifiers", :force => true do |t|
-    t.string   "type"
+    t.string   "kind"
     t.integer  "amount"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
