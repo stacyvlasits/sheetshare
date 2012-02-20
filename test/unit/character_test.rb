@@ -7,7 +7,6 @@ class CharacterTest < ActiveSupport::TestCase
   end
   test "assigning a string to the int field should error out" do
     character = Character.new(:name => 'Tim',:int => 'string')
-    assert character.valid?, 
-      "Permitted a string assigned to the int field"
+    assert !character.valid?, "Permitted a string assigned to the int field"
   end
 end
