@@ -34,13 +34,6 @@ ActiveRecord::Schema.define(:version => 20120225024252) do
     t.datetime "updated_at",   :null => false
   end
 
-  create_table "levels", :force => true do |t|
-    t.string   "class"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-    t.integer  "character_id"
-  end
-
   create_table "modifiers", :force => true do |t|
     t.string   "kind"
     t.integer  "amount"
