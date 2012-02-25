@@ -1,0 +1,31 @@
+<h1>Listing gears</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Slot</th>
+    <th>Equipped</th>
+    <th>Modifier</th>
+    <th>Character</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @gears.each do |gear| %>
+  <tr>
+    <td><%= gear.name %></td>
+    <td><%= gear.slot %></td>
+    <td><%= gear.equipped %></td>
+    <td><%= gear.modifier_id %></td>
+    <td><%= gear.character_id %></td>
+    <td><%= link_to 'Show', gear %></td>
+    <td><%= link_to 'Edit', edit_gear_path(gear) %></td>
+    <td><%= link_to 'Destroy', gear, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Gear', new_gear_path %>

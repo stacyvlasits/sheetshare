@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: sword
+  slot: 1-handed weapon
+  equipped: true
+  character_id: 1
+
+two:
+  name: wooden shield
+  slot: shield
+  equipped: false
+  character_id: 1

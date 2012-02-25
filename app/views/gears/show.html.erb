@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @gear.name %>
+</p>
+
+<p>
+  <b>Slot:</b>
+  <%= @gear.slot %>
+</p>
+
+<p>
+  <b>Equipped:</b>
+  <%= @gear.equipped %>
+</p>
+
+<p>
+  <b>Modifier:</b>
+  <%= @gear.modifier_id %>
+</p>
+
+<p>
+  <b>Character:</b>
+  <%= @gear.character_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_gear_path(@gear) %> |
+<%= link_to 'Back', gears_path %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120220115044) do
+ActiveRecord::Schema.define(:version => 20120225024252) do
 
   create_table "characters", :force => true do |t|
     t.string   "name"
@@ -25,6 +25,15 @@ ActiveRecord::Schema.define(:version => 20120220115044) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "gears", :force => true do |t|
+    t.string   "name"
+    t.string   "slot"
+    t.boolean  "equipped"
+    t.integer  "character_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
   create_table "levels", :force => true do |t|
     t.string   "class"
     t.datetime "created_at",   :null => false
@@ -35,9 +44,11 @@ ActiveRecord::Schema.define(:version => 20120220115044) do
   create_table "modifiers", :force => true do |t|
     t.string   "kind"
     t.integer  "amount"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.integer  "character_id"
+    t.string   "modifiable_type"
+    t.integer  "modifiable_id"
   end
 
 end
