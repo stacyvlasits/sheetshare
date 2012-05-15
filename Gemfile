@@ -9,11 +9,13 @@ group :development do
 	gem 'pry'
 	gem 'pry-rails'
 	gem 'ZenTest'
+  gem 'awesome_print'
 end
 
 group :development, :test do
   gem "rspec-rails"
   gem "launchy"
+  gem 'factory_girl_rails'
 end
 
 group :production do

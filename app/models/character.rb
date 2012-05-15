@@ -10,4 +10,8 @@ class Character < ActiveRecord::Base
     :greater_than_or_equal_to => 1, :only_integer => true
 
 
+  def hp
+    self.modifiers.current("hp").sum(:amount)
+  end
+
 end
