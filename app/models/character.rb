@@ -9,9 +9,17 @@ class Character < ActiveRecord::Base
   validates_numericality_of :str, :int, :wis, :dex, :con, :chr, 
     :greater_than_or_equal_to => 1, :only_integer => true
 
+  skills = ["hp", "bab", "ac"]
 
-  def hp
-    self.modifiers.current("hp").sum(:amount)
+
+  skills.each do |method_name|
+    define_method method_name do 
+      self.modifiers.where(:kind => method_name).sum(:amount)  
+    end    
   end
+  
+  # def hp
+  #   self.modifiers.current("hp").sum(:amount)
+  # end
 
 end
