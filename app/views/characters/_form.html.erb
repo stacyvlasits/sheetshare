@@ -1,45 +1,50 @@
-<%= form_for(@character) do |f| %>
-  <% if @character.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@character.errors.count, "error") %> prohibited this character from being saved:</h2>
-
-      <ul>
-      <% @character.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @character, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :int, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :int, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :str, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :str, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :wis, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :wis, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :con, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :con, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :chr, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :chr, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :dex, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :dex, :class => 'number_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :int %><br />
-    <%= f.number_field :int %>
-  </div>
-  <div class="field">
-    <%= f.label :str %><br />
-    <%= f.number_field :str %>
-  </div>
-  <div class="field">
-    <%= f.label :wis %><br />
-    <%= f.number_field :wis %>
-  </div>
-  <div class="field">
-    <%= f.label :con %><br />
-    <%= f.number_field :con %>
-  </div>
-  <div class="field">
-    <%= f.label :chr %><br />
-    <%= f.number_field :chr %>
-  </div>
-  <div class="field">
-    <%= f.label :dex %><br />
-    <%= f.number_field :dex %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                characters_path, :class => 'btn' %>
   </div>
 <% end %>
