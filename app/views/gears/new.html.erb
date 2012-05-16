@@ -1,5 +1,4 @@
-<h1>New gear</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', gears_path %>
+<%- model_class = @gear.class -%>
+<h1><%=t '.title', :default => t('helpers.titles.new', :model => model_class.model_name.human,
+                               :default => "New #{model_class.model_name.human}") %></h1>
+<%= render :partial => 'form' %>

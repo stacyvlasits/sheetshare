@@ -1,37 +1,32 @@
-<%= form_for(@gear) do |f| %>
-  <% if @gear.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@gear.errors.count, "error") %> prohibited this gear from being saved:</h2>
-
-      <ul>
-      <% @gear.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @gear, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :slot, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :slot, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :equipped, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :equipped, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :character_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :character_id, :class => 'number_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :slot %><br />
-    <%= f.text_field :slot %>
-  </div>
-  <div class="field">
-    <%= f.label :equipped %><br />
-    <%= f.check_box :equipped %>
-  </div>
-  <div class="field">
-    <%= f.label :modifier_id %><br />
-    <%= f.number_field :modifier_id %>
-  </div>
-  <div class="field">
-    <%= f.label :character_id %><br />
-    <%= f.number_field :character_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                gears_path, :class => 'btn' %>
   </div>
 <% end %>
