@@ -14,6 +14,7 @@
       <th><%= model_class.human_attribute_name(:hp) %></th>
       <th><%= model_class.human_attribute_name(:ac) %></th>
       <th><%= model_class.human_attribute_name(:bab) %></th>
+      <th><%= model_class.human_attribute_name(:"open_lock") %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -30,7 +31,8 @@
         <td><%= character.dex %></td>
         <td><%= character.hp %></td>
         <td><%= character.ac %></td>
-        <td><%= character.bab %></td>        
+        <td><%= character.bab %></td>  
+        <td><%= character.open_lock %></td>        
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_character_path(character), :class => 'btn btn-mini' %>
