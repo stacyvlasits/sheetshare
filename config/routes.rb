@@ -1,6 +1,7 @@
 Sheetshare::Application.routes.draw do
-  resources :gears
+  resources :levels
 
+  resources :gears
   resources :characters
 
   # The priority is based upon order of creation:

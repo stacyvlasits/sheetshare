@@ -3,12 +3,11 @@ class Gear < ActiveRecord::Base
   belongs_to :character
 
   validates :name, :slot, :presence => true
-  
+
   def stats
-    stats = []
-    self.modifiers.group_by(&:kind).each {|kind,other| stats << "#{kind}:  #{other.sum(&:amount)}"}
-    stats
-  end
+    self.modifiers.group_by(&:kind).map {|kind,other| {kind => other.sum(&:amount)}}
+  end  
+ 
   def owner
     Character.find(self.character_id).name
   end
